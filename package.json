@@ -1,0 +1,21 @@
+{
+  "name": "sms-manager",
+  "version": "1.0.0",
+  "description": "sms manager",
+  "main": "index.js",
+  "repository": "https://github.com/njeri-ngigi/sms-manager.git",
+  "author": "Njeri Ngigi <njery.ngigi@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev:start": "DEBUG=log nodemon src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
