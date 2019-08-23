@@ -12,10 +12,15 @@
     "dev:start": "DEBUG=log nodemon src/index.js"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "eslint": "^6.2.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "nodemon": "^1.19.1"
   }
 }
