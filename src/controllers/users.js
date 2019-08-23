@@ -6,11 +6,10 @@ module.exports = {
     name = name.trim();
     phoneNumber = phoneNumber.trim();
 
-    users[phoneNumber] = { name, sms: [] };
+    users[phoneNumber] = { name, smsSent: [], smsReceived: [] };
 
-    res.status(201).send(`${name} added successfully`);
+    res.status(201).send({message: `${name} added successfully`});
   },
-
   getUser: (req, res) => {
     const { id: userId } = req.params;
     if (!(userId in users)) {
@@ -18,6 +17,8 @@ module.exports = {
     } else {
       res.status(200).send({ data: users[userId] })
     }
+  },
+  deleteContact: (req, res) => {
 
   }
 }
