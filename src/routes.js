@@ -1,10 +1,15 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDoc = require('../swagger.json');
 const userController = require('./controllers/users');
 const smsController = require('./controllers/sms');
 const validator = require('./middlewares/validate');
 const auth = require('./middlewares/authentication');
 
 const router = express();
+
+router.use('/', swaggerUi.serve);
+router.get('/', swaggerUi.setup(swaggerDoc));
 
 router.post('/user', validator.validateUser, userController.createUser);
 router.post('/login', validator.validateLogin, userController.login);
