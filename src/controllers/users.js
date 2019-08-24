@@ -32,23 +32,19 @@ module.exports = {
       }
     }
 
-    return res.status(401).send({ error: ['phonenumber or password incorrect'] });
+    return res.status(401).send({ errors: ['phonenumber or password incorrect'] });
   },
 
   getUsers: (req, res) => {
-    res.send({ data: Object.keys(users) });
+    res.status(200).send({ data: Object.keys(users) });
   },
 
   deleteContact: (req, res) => {
     const { token } = req.headers;
     const { phoneNumber } = jwt.decode(token);
-    if (phoneNumber in users) {
-      const { smsSent } = users[phoneNumber];
-      smsSent.map((message) => delete sms[message]);
-      delete users[phoneNumber];
-      res.status(200).send({ message: 'contact deleted successfully' });
-    } else {
-      res.status(404).send({ errors: ['user not found'] });
-    }
+    const { smsSent } = users[phoneNumber];
+    smsSent.map((message) => delete sms[message]);
+    delete users[phoneNumber];
+    res.status(200).send({ message: 'contact deleted successfully' });
   },
 };
