@@ -9,19 +9,24 @@
   "private": false,
   "scripts": {
     "start": "node src/index.js",
-    "dev:start": "DEBUG=log nodemon src/index.js"
+    "dev:start": "DEBUG=log nodemon src/index.js",
+    "test": "nyc mocha src/tests --timeout 60000 --exit"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "nyc": "^14.1.1",
     "swagger-ui-express": "^4.0.7"
   },
   "devDependencies": {
     "eslint": "^6.2.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
     "nodemon": "^1.19.1"
   }
 }
