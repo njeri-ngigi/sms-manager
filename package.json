@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev:start": "DEBUG=log nodemon src/index.js",
-    "test": "nyc mocha src/tests --exit"
+    "test": "nyc mocha src/tests --exit",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "exclude": [
@@ -29,6 +30,7 @@
     "swagger-ui-express": "^4.0.7"
   },
   "devDependencies": {
+    "coveralls": "^3.0.6",
     "eslint": "^6.2.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
