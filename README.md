@@ -30,6 +30,6 @@ A node API that models users sending and receiving sms. The API allows users to 
 |  /sms/users/received   | GET    | Retrieve all user's received messages  |
 
 
-## Documentation
+## Documentation and Hosting 
+[Go to Documentation on Heroku](https://sms-manager-njery.herokuapp.com/api/v1/)
 
-## Hosting
