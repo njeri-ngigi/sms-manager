@@ -42,20 +42,14 @@ module.exports = {
   getSentUserMessages: (req, res) => {
     const { phoneNumber } = jwt.decode(req.headers.token);
     const { smsSent } = users[phoneNumber];
-    res.status(200).send({
-      data: [
-        smsSent.map((message) => sms[message]),
-      ],
-    });
+    const data = [smsSent.map((message) => sms[message])];
+    res.status(200).send({ data });
   },
 
   getReceivedUserMessages: (req, res) => {
     const { phoneNumber } = jwt.decode(req.headers.token);
     const { smsReceived } = users[phoneNumber];
-    res.status(200).send({
-      data: [
-        smsReceived.map((message) => sms[message]),
-      ],
-    });
+    const data = [smsReceived.map((message) => sms[message])];
+    res.status(200).send({ data });
   },
 };

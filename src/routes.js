@@ -17,7 +17,7 @@ router.delete('/user', auth.isLoggedIn, userController.deleteContact);
 router.get('/user', auth.isLoggedIn, userController.getUsers);
 
 router.post('/sms', auth.isLoggedIn, validator.validateSms, smsController.sendSms);
-router.get('/sms/users/', auth.isLoggedIn, smsController.getAllUserMessages);
+router.get('/sms/users', auth.isLoggedIn, smsController.getAllUserMessages);
 router.get('/sms/users/sent', auth.isLoggedIn, smsController.getSentUserMessages);
 router.get('/sms/users/received', auth.isLoggedIn, smsController.getReceivedUserMessages);
 

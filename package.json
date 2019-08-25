@@ -12,6 +12,12 @@
     "dev:start": "DEBUG=log nodemon src/index.js",
     "test": "nyc mocha src/tests --exit"
   },
+  "nyc": {
+    "exclude": [
+      "src/tests/",
+      "src/index.js"
+    ]
+  },
   "dependencies": {
     "bcrypt": "^3.0.6",
     "chai": "^4.2.0",
