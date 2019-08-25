@@ -1,0 +1,401 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "SMS Manager",
+    "description": "TODO: Add Description",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "securityDefinitions": {
+    "token": {
+      "type": "apiKey",
+      "description": "",
+      "name": "token",
+      "in": "header"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/user": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create User",
+        "tags": [
+          "Users"
+        ],
+        "operationId": "UserPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get all users",
+        "tags": [
+          "Users"
+        ],
+        "operationId": "UserGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Delete a user",
+        "tags": [
+          "Users"
+        ],
+        "operationId": "UserDelete",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/login": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Login User",
+        "tags": [
+          "Users"
+        ],
+        "operationId": "LoginPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/sms": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Send sms",
+        "tags": [
+          "Sms"
+        ],
+        "operationId": "SmsPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SendsmsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/sms/users": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get all sms",
+        "tags": [
+          "Sms"
+        ],
+        "operationId": "SmsUsersGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/sms/users/received": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get all received sms",
+        "tags": [
+          "Sms"
+        ],
+        "operationId": "SmsUsersReceivedGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/sms/users/sent": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get all sent sms",
+        "tags": [
+          "Sms"
+        ],
+        "operationId": "SmsUsersSentGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateUserRequest": {
+      "title": "CreateUserRequest",
+      "example": {
+        "name": "Njeri",
+        "phoneNumber": "12346",
+        "password": "123456"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "phoneNumber",
+        "password"
+      ]
+    },
+    "LoginUserRequest": {
+      "title": "LoginUserRequest",
+      "example": {
+        "phoneNumber": "12346",
+        "password": "123456"
+      },
+      "type": "object",
+      "properties": {
+        "phoneNumber": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "phoneNumber",
+        "password"
+      ]
+    },
+    "SendsmsRequest": {
+      "title": "SendsmsRequest",
+      "example": {
+        "receiver": "12345",
+        "message": "hello"
+      },
+      "type": "object",
+      "properties": {
+        "receiver": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "receiver",
+        "message"
+      ]
+    }
+  },
+  "security": [
+    {
+      "token": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Sms"
+    }
+  ]
+}
